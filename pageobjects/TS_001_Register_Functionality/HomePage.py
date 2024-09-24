@@ -6,6 +6,7 @@ class HomePage():
         #Locator
         myaccount_xpath = "//*[@id='top-links']/ul/li[2]/a/span[2]"
         register_linktxt = "Register"
+        login_linktxt = "Login"
 
         #Constructor
 
@@ -18,3 +19,6 @@ class HomePage():
 
         def click_register(self):
             self.driver.find_element(By.LINK_TEXT, self.register_linktxt).click()
+
+        def click_login(self):
+            self.driver.find_element(By.LINK_TEXT, self.login_linktxt).click()

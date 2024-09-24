@@ -1,0 +1,29 @@
+2024-09-22 20:36:56,304 - INFO - Starting test: Validate registration with invalid email.
+2024-09-22 20:37:01,211 - INFO - Navigated to OpenCart demo site.
+2024-09-22 20:37:02,461 - INFO - Navigated to the Register page.
+2024-09-22 20:37:02,762 - INFO - Testing with invalid email: pavanol
+2024-09-22 20:37:05,146 - ERROR - No error message for invalid email: pavanol - Message: no such element: Unable to locate element: {"method":"css selector","selector":"div.text-danger"}
+  (Session info: chrome=128.0.6613.138); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF76FDB9412+29090]
+	(No symbol) [0x00007FF76FD2E239]
+	(No symbol) [0x00007FF76FBEB1DA]
+	(No symbol) [0x00007FF76FC3EFE7]
+	(No symbol) [0x00007FF76FC3F23C]
+	(No symbol) [0x00007FF76FC897C7]
+	(No symbol) [0x00007FF76FC6672F]
+	(No symbol) [0x00007FF76FC865A2]
+	(No symbol) [0x00007FF76FC66493]
+	(No symbol) [0x00007FF76FC309D1]
+	(No symbol) [0x00007FF76FC31B31]
+	GetHandleVerifier [0x00007FF7700D871D+3302573]
+	GetHandleVerifier [0x00007FF770124243+3612627]
+	GetHandleVerifier [0x00007FF77011A417+3572135]
+	GetHandleVerifier [0x00007FF76FE75EB6+801862]
+	(No symbol) [0x00007FF76FD3945F]
+	(No symbol) [0x00007FF76FD34FB4]
+	(No symbol) [0x00007FF76FD35140]
+	(No symbol) [0x00007FF76FD2461F]
+	BaseThreadInitThunk [0x00007FFAFDDD7374+20]
+	RtlUserThreadStart [0x00007FFAFFDDCC91+33]
+

@@ -17,17 +17,32 @@ class RegisterPage:
     email_warning_xpath = "//*[@id='account']/div[4]/div/div"
     phone_warning_xpath = "//*[@id='account']/div[5]/div/div"
     password_warning_xpath = "//*[@id='content']/form/fieldset[2]/div[1]/div/div"
+    password_mismatcherror_xpath = "//*[@id='content']/form/fieldset[2]/div[2]/div/div"
     tcwarning_xpath = "//div[@class='alert alert-danger alert-dismissible']"
     subscribeyes_xpath = "//label[normalize-space()='Yes']//input[@name='newsletter']"
     subscribeno_xpath = "//input[@value='0']"
     continuesucces_btn_xpath = "//a[@class='btn btn-primary']"
     subsribelink_xpath = "//*[@id='content']/ul[4]/li/a"
-
+    registerpage_xpath = "//*[@id='content']/h1"
+    already_reg_xpath = "//div[@class='alert alert-danger alert-dismissible']"
+    firstname_placeholder_id = "input-firstname"
+    lastname_placeholder_id = "input-lastname"
+    email_placeholder_id = "input-email"
+    telephone_placeholder_id = "input-telephone"
+    password_placeholder_id = "input-password"
+    confirm_placeholder_id = "input-confirm"
     # Constructor
     def __init__(self, driver):
         self.driver = driver
 
     # Action
+    def register_page(self):
+        try:
+            self.page = self.driver.find_element(By.XPATH,self.registerpage_xpath)
+            return self.page.text
+        except:
+            None
+
     def enter_firstname(self,firstname):
         self.driver.find_element(By.XPATH, self.first_xpath).send_keys(firstname)
 
@@ -46,11 +61,50 @@ class RegisterPage:
     def enter_cpassword(self,password):
         self.driver.find_element(By.XPATH, self.cpass_xpath).send_keys(password)
 
+    def password_mismatch(self):
+        try:
+            self.error = self.driver.find_element(By.XPATH, self.password_mismatcherror_xpath)
+            return self.error.text
+        except:
+            None
+
+    def already_registered(self):
+        try:
+            self.alert = self.driver.find_element(By.XPATH, self.already_reg_xpath)
+            return self.alert.text
+        except:
+            None
+
+
     def click_agree(self):
         self.driver.find_element(By.XPATH, self.agree_xpath).click()
 
     def click_continue(self):
         self.driver.find_element(By.XPATH,self.conti_xpath).click()
+
+    def firstname_placeholder(self):
+        self.name_placeholder = self.driver.find_element(By.ID,self.firstname_placeholder_id).get_attribute("placeholder")
+        return self.name_placeholder
+
+    def lastname_placeholder(self):
+        self.name_placeholder = self.driver.find_element(By.ID,self.lastname_placeholder_id).get_attribute("placeholder")
+        return self.name_placeholder
+
+    def email_placeholder(self):
+        self.name_placeholder = self.driver.find_element(By.ID,self.email_placeholder_id).get_attribute("placeholder")
+        return self.name_placeholder
+
+    def telephone_placeholder(self):
+        self.name_placeholder = self.driver.find_element(By.ID,self.telephone_placeholder_id).get_attribute("placeholder")
+        return self.name_placeholder
+
+    def password_placeholder(self):
+        self.name_placeholder = self.driver.find_element(By.ID,self.password_placeholder_id).get_attribute("placeholder")
+        return self.name_placeholder
+
+    def confirmpwd_placeholder(self):
+        self.name_placeholder = self.driver.find_element(By.ID, self.confirm_placeholder_id).get_attribute("placeholder")
+        return self.name_placeholder
 
     def succes_message(self):
         try:
