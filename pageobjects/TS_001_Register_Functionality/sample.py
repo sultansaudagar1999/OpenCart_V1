@@ -19,7 +19,7 @@ driver.find_element(By.LINK_TEXT,"Register").click()
 # driver.find_element(By.XPATH,"//input[@id='input-password']").send_keys("123456")
 # driver.find_element(By.XPATH,"//input[@id='input-confirm']").send_keys("123456")
 # driver.find_element(By.XPATH,"//input[@name='agree']").click()
-# driver.find_element(By.XPATH,"//input[@value='Continue']").is_displayed()
+driver.find_element(By.XPATH,"//input[@value='Continue']").is_displayed()
 
 
 name_placeholder = driver.find_element(By.ID,"input-firstname").get_attribute("placeholder")

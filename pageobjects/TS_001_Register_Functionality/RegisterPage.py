@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 
 class RegisterPage:
     # Locator
+    breadcrumb_css = "ul.breadcrumb"
+    page_heading_css = "h1"
     first_xpath = "//input[@id='input-firstname']"
     last_xpath = "//input[@id='input-lastname']"
     email_xpath = "//input[@id='input-email']"
@@ -11,6 +13,7 @@ class RegisterPage:
     cpass_xpath = "//input[@id='input-confirm']"
     agree_xpath = "//input[@name='agree']"
     conti_xpath = "//input[@value='Continue']"
+    login_link_xpath = "//*[@id='column-right']/div/a[1]"
     success_xpath = "//*[@id='content']/h1"
     firstname_warning_xpath = "//*[@id='account']/div[2]/div/div"
     lastname_warning_xpath = "//*[@id='account']/div[3]/div/div"
@@ -42,6 +45,11 @@ class RegisterPage:
             return self.page.text
         except:
             None
+    def get_breadcrumb(self):
+        return self.driver.find_element(By.CSS_SELECTOR, self.breadcrumb_css).text
+
+    def get_page_heading(self):
+        return self.driver.find_element(By.CSS_SELECTOR, self.page_heading_css).text
 
     def enter_firstname(self,firstname):
         self.driver.find_element(By.XPATH, self.first_xpath).send_keys(firstname)
@@ -61,6 +69,15 @@ class RegisterPage:
     def enter_cpassword(self,password):
         self.driver.find_element(By.XPATH, self.cpass_xpath).send_keys(password)
 
+    def password_field_type(self):
+        return self.driver.find_element(By.XPATH, self.pass_xpath).get_attribute("type")
+
+    def cpassword_field_type(self):
+        return self.driver.find_element(By.XPATH, self.cpass_xpath).get_attribute("type")
+
+    def clicklogin_link_registerpage(self):
+        self.driver.find_element(By.XPATH,self.login_link_xpath).click()
+
     def password_mismatch(self):
         try:
             self.error = self.driver.find_element(By.XPATH, self.password_mismatcherror_xpath)
@@ -75,9 +92,12 @@ class RegisterPage:
         except:
             None
 
-
     def click_agree(self):
         self.driver.find_element(By.XPATH, self.agree_xpath).click()
+
+    def privacy_agree_status(self):
+        self.status = self.driver.find_element(By.XPATH, self.agree_xpath).is_selected()
+        return self.status
 
     def click_continue(self):
         self.driver.find_element(By.XPATH,self.conti_xpath).click()

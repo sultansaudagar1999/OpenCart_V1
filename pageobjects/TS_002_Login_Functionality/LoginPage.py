@@ -34,6 +34,9 @@ class LoginPage():
         def click_login(self):
             self.driver.find_element(By.XPATH,self.loginbtn_xpath).click()
 
+        def login_button_displaystatus(self):
+            return  self.driver.find_element(By.XPATH,self.loginbtn_xpath).is_displayed()
+
         def myaccount_page(self):
             try:
                 self.page = self.driver.find_element(By.XPATH, self.myaccount_xpath).is_displayed()

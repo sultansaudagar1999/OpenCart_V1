@@ -1,7 +1,7 @@
 import configparser
 import os
 
-file_location = "C:\\Users\\DefineLabs-PC\\PycharmProjects\\OpenCart_V1\\configurations\\config.ini"
+file_location = "C:\\Users\\sulta\\PycharmProjects\\OpenCart_V1\\configurations\\config.ini"
 config = configparser.RawConfigParser()
 config.read(file_location)
 
