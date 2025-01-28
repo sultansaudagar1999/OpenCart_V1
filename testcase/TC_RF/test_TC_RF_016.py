@@ -3,7 +3,6 @@ import time
 
 from pageobjects.TS_001_Register_Functionality.HomePage import HomePage
 from pageobjects.TS_001_Register_Functionality.RegisterPage import RegisterPage
-from utilities import randomstring
 from utilities.readproperty import ReadConfig
 
 

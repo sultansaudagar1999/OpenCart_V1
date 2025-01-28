@@ -23,6 +23,8 @@ driver.find_element(By.XPATH,"//input[@value='Continue']").is_displayed()
 
 
 name_placeholder = driver.find_element(By.ID,"input-firstname").get_attribute("placeholder")
+driver.find_element(By.ID,"input-firstname")
+
 
 
 print(name_placeholder)

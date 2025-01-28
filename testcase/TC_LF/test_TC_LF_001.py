@@ -1,5 +1,3 @@
-import time
-
 from pageobjects.TS_001_Register_Functionality.HomePage import HomePage
 from pageobjects.TS_002_Login_Functionality.LoginPage import LoginPage
 from testcase.TC_RF.conftest import setup
@@ -26,13 +24,12 @@ def test_TC_LF_001(setup):
     lg.click_login()
 
     actual_result = lg.myaccount_page()
-    expected_result = "My Account"
 
-    if actual_result == expected_result:
+
+
+    if actual_result == True:
         assert True
     else:
         assert False
 
-
-    time.sleep(5)
 

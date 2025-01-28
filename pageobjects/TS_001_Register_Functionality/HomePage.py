@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class HomePage():
+class HomePage:
 
         #Locator
         myaccount_xpath = "//*[@id='top-links']/ul/li[2]/a/span[2]"
@@ -22,3 +22,6 @@ class HomePage():
 
         def click_login(self):
             self.driver.find_element(By.LINK_TEXT, self.login_linktxt).click()
+
+        def homepage_header(self):
+            self.driver.find_element(By.XPATH,)

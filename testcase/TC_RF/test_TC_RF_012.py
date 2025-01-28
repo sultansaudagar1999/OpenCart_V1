@@ -1,15 +1,11 @@
 import os
 import time
-from argparse import Action
 
-import pytest
 from selenium.webdriver import ActionChains, Keys
-from selenium.webdriver.common.by import By
 
 from pageobjects.TS_001_Register_Functionality.HomePage import HomePage
 from pageobjects.TS_001_Register_Functionality.RegisterPage import RegisterPage
 from utilities import randomstring
-from utilities.logger_utility import LoggerUtility
 from utilities.readproperty import ReadConfig
 
 

@@ -1,8 +1,8 @@
 import os
 
 from pageobjects.TS_001_Register_Functionality.HomePage import HomePage
-from pageobjects.TS_002_Login_Functionality.LoginPage import LoginPage
 from pageobjects.TS_001_Register_Functionality.RegisterPage import RegisterPage
+from pageobjects.TS_002_Login_Functionality.LoginPage import LoginPage
 from utilities.readproperty import ReadConfig
 
 

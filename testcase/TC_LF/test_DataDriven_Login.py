@@ -1,6 +1,5 @@
 import os
 import time
-
 from pageobjects.TS_001_Register_Functionality.HomePage import HomePage
 from pageobjects.TS_002_Login_Functionality.LoginPage import LoginPage
 from testcase.TC_RF.conftest import setup

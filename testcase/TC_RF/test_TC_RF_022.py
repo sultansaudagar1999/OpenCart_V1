@@ -1,5 +1,3 @@
-from tarfile import REGULAR_TYPES
-
 from pageobjects.TS_001_Register_Functionality.HomePage import HomePage
 from pageobjects.TS_001_Register_Functionality.RegisterPage import RegisterPage
 from utilities.readproperty import ReadConfig
